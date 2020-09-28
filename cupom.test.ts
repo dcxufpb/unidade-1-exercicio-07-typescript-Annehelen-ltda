@@ -171,23 +171,29 @@ test('Inscrição estadual vazia', () => {
 test('Exercício 2 - customizado', () => {
 
   // Defina seus próprios valores para as variáveis a seguir
-  let nome_loja = "";
-  let logradouro = "";
-  let numero = 0;
-  let complemento = "";
-  let bairro = "";
-  let municipio = "";
-  let estado = "";
-  let cep = "";
-  let telefone = "";
-  let observacao = "";
-  let cnpj = "";
-  let inscricao_estadual = "";
+  let nome_loja = "Smelly Cat";
+  let logradouro = "Rua Etheria";
+  let numero = 205;
+  let complemento = "Perto da velhinha que mora em uma caverna";
+  let bairro = "Br. Templo do Cristal";
+  let municipio = "Beach City";
+  let estado = "BC";
+  let cep = "78051-604";
+  let telefone = "(66)4002-8922";
+  let observacao = "Por Favor ignorar os exército Intergalácticos em guerra tentando dominar o planeta";
+  let cnpj = "53.409.609/0001-85";
+  let inscricao_estadual = "512.670.302.653";
+  
+  let expected = "Smelly Cat\n";
+  expected += "Rua Etheria, 205 Perto da velhinha que mora em uma caverna\n";
+  expected += "Br. Templo do Cristal - Beach City - BC\n";
+  expected += "CEP:78051-604 Tel (66)4002-8922\n";
+  expected += "Por Favor ignorar os exército Intergalácticos em guerra tentando dominar o planeta\n";
+  expected +="CNPJ: 53.409.609/0001-85\n";
+  expected += "IE: 512.670.302.653\n";
 
   //E atualize o texto esperado abaixo
   expect(cupom_dados_loja_param(nome_loja, logradouro, numero, complemento,
     bairro, municipio, estado, cep, telefone, observacao, cnpj, 
-    inscricao_estadual)).toBe(
-    `
-`);
+    inscricao_estadual)).toBe(expected);
 });
